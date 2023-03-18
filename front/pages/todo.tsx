@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
+import EachTodoList from '../component/EachTodoList'
+
 export async function getServerSideProps(){
   const res =  await fetch('http://localhost:4000/todo')
   const data = await res.json()
@@ -42,21 +44,6 @@ const Todo = (props:any) => {
     setData(data)
   }
 
-  const deleteList = async (id:number) => {
-    console.log('deleteList 함수발동');
-    console.log('id', id);
-    const deleteUrl = fetchUrl + `/${id}`
-    try{
-      await fetch(deleteUrl,{
-        method: "DELETE",
-        headers: { "content-type": "application/json" },
-      });
-    }
-    catch{console.log('deleteList 실패')}
-    setIsFetching(true)
-  }
-
-
   const onChangeInput = (e:any) => {
     console.log('onChangeInput 함수발동');
     const inputId = e.target.id
@@ -86,12 +73,17 @@ const Todo = (props:any) => {
       <button onClick={addItem}>추가</button>
     </div>
 
-    {data && <>
-      {data.map((ele:any, idx:any)=> <div key={idx}>
-        <span>{ele.title}</span> | <span>{ele.contents}</span>
-        <button onClick={()=>{deleteList(ele.id)}}>삭제</button>
-      </div>)} 
-    </>}
+    {data && 
+        data.map((ele:any, idx:any) => 
+        <EachTodoList key={idx} data={ele} setIsFetching={setIsFetching}/>
+          // <span>{ele.title}</span> | <span>{ele.contents}</span>
+          // <button onClick={()=>{deleteList(ele.id)}}>삭제</button>
+          // <button onClick={()=>{updateList(ele.id)}}>수정</button>
+        )
+    }
+
+    
+
   </> );
 }
 export default Todo;
