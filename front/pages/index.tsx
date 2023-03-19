@@ -10,7 +10,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
-      <>hello world</>
+      <h1>Home</h1>
+      <p>여러가지 기능을 만들어보는 테스트 프로젝트입니다</p>
+      <ul>
+        <li>다크모드</li>
+        <li>JSON_SERVER + TodoList</li>
+      </ul>
     </>
   )
 }

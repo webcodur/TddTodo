@@ -1,19 +1,14 @@
 {
   "todo": [
     {
-      "id": 1,
-      "title": "식사",
-      "contents": "밥먹기"
+      "title": "작업",
+      "contents": "코딩 후 개발일지 작성",
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "근무",
-      "contents": "일하기"
-    },
-    {
-      "title": "aassssss",
-      "contents": "bbbbb",
-      "id": 3
+      "title": "휴식",
+      "contents": "운동, 명상",
+      "id": 2
     }
   ]
 }
