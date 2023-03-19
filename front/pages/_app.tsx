@@ -1,5 +1,5 @@
 import type { AppProps } from "next/app";
-import AppLayout from "../component/Applayout";
+import AppLayout from "../components/Applayout";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { useState } from "react";
 

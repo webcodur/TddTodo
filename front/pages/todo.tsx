@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import EachTodoList from '../component/EachTodoList'
+import EachTodoList from '../components/EachTodoList'
 
 export async function getServerSideProps(){
   const res =  await fetch('http://localhost:4000/todo')
