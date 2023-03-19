@@ -7,16 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "front": "cd front && npm run dev",
     "back": "cd back && npm run start",
-    
     "start": "cd front && npm run start",
     "build": "cd front && npm run build",
-    
     "install-front": "cd front && npm i",
     "install-back": "cd back && npm i",
-    "install-root":"npm i",
-    
-    "prj-dev": "concurrently \"npm run dev --prefix front\" \"npm run start --prefix back\"",
-    "prj-install":"npm-run-all install-root install-front install-back"
+    "install-root": "npm i",
+    "dev": "concurrently \"npm run start --prefix back\" \"npm run dev --prefix front\" ",
+    "prj-install": "npm-run-all install-root install-front install-back"
   },
   "repository": {
     "type": "git",
